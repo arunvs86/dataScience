@@ -1,2 +1,104 @@
 [2025-02-02 16:00:55,994: INFO : main : Welcome to custom logging]
 [2025-02-02 16:01:38,913: INFO : main : Welcome to custom logging]
+[2025-02-03 20:03:42,453: INFO : main : >>>>>> stage Data ingestion stage started <<<<<<<<<]
+[2025-02-03 20:03:42,453: ERROR : main : Argument path of type <class 'str'> to <function read_yaml at 0x10332aa70> does not match annotation type <class 'pathlib.Path'>]
+Traceback (most recent call last):
+  File "/Users/arunsoundararajan/dataScience/main.py", line 9, in <module>
+    data_ingestion.initiate_data_ingestion()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/pipeline/data_ingestion.py", line 12, in initiate_data_ingestion
+    config = ConfigurationManager()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/config/configuration.py", line 13, in __init__
+    self.config = read_yaml(config_filepath)
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/site-packages/ensure/main.py", line 870, in __call__
+    raise EnsureError(msg.format(arg=arg, f=self.f, t=templ, valt=type(value)))
+ensure.main.EnsureError: Argument path of type <class 'str'> to <function read_yaml at 0x10332aa70> does not match annotation type <class 'pathlib.Path'>
+[2025-02-03 20:07:07,591: INFO : main : >>>>>> stage Data ingestion stage started <<<<<<<<<]
+[2025-02-03 20:07:07,591: INFO : common : yaml file: config/config.yaml loaded successfully]
+[2025-02-03 20:07:07,593: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:07:07,593: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:07:07,593: INFO : common : Created directory at: artifacts ]
+[2025-02-03 20:07:07,593: INFO : common : Created directory at: artifacts/data_ingestion ]
+[2025-02-03 20:07:08,074: ERROR : main : HTTP Error 404: Not Found]
+Traceback (most recent call last):
+  File "/Users/arunsoundararajan/dataScience/main.py", line 9, in <module>
+    data_ingestion.initiate_data_ingestion()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/pipeline/data_ingestion.py", line 17, in initiate_data_ingestion
+    data_ingestion.download_file()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/components/data_ingestion.py", line 14, in download_file
+    filename,headers = request.urlretrieve(
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 241, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 525, in open
+    response = meth(req, response)
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+[2025-02-03 20:10:17,325: INFO : main : >>>>>> stage Data ingestion stage started <<<<<<<<<]
+[2025-02-03 20:10:17,326: INFO : common : yaml file: config/config.yaml loaded successfully]
+[2025-02-03 20:10:17,327: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:10:17,328: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:10:17,328: INFO : common : Created directory at: artifacts ]
+[2025-02-03 20:10:17,328: INFO : common : Created directory at: artifacts/data_ingestion ]
+[2025-02-03 20:10:19,623: INFO : data_ingestion : artifacts/data_ingestion/data.zip downaload with the following info: 
+ ]
+[2025-02-03 20:10:19,623: ERROR : main : File is not a zip file]
+Traceback (most recent call last):
+  File "/Users/arunsoundararajan/dataScience/main.py", line 9, in <module>
+    data_ingestion.initiate_data_ingestion()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/pipeline/data_ingestion.py", line 18, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/components/data_ingestion.py", line 26, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file,'r') as zip_ref:
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1272, in __init__
+    self._RealGetContents()
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2025-02-03 20:11:49,426: INFO : main : >>>>>> stage Data ingestion stage started <<<<<<<<<]
+[2025-02-03 20:11:49,427: INFO : common : yaml file: config/config.yaml loaded successfully]
+[2025-02-03 20:11:49,428: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:11:49,428: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:11:49,428: INFO : common : Created directory at: artifacts ]
+[2025-02-03 20:11:49,428: INFO : common : Created directory at: artifacts/data_ingestion ]
+[2025-02-03 20:11:49,428: INFO : data_ingestion : File already exists]
+[2025-02-03 20:11:49,429: ERROR : main : File is not a zip file]
+Traceback (most recent call last):
+  File "/Users/arunsoundararajan/dataScience/main.py", line 9, in <module>
+    data_ingestion.initiate_data_ingestion()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/pipeline/data_ingestion.py", line 18, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/components/data_ingestion.py", line 26, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file,'r') as zip_ref:
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1272, in __init__
+    self._RealGetContents()
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2025-02-03 20:20:53,219: INFO : main : >>>>>> stage Data ingestion staage started <<<<<<<<<]
+[2025-02-03 20:20:53,220: INFO : common : yaml file: config/config.yaml loaded successfully]
+[2025-02-03 20:20:53,221: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:20:53,222: INFO : common : yaml file: schema.yaml loaded successfully]
+[2025-02-03 20:20:53,222: INFO : common : Created directory at: artifacts ]
+[2025-02-03 20:20:53,222: INFO : common : Created directory at: artifacts/data_ingestion ]
+[2025-02-03 20:20:53,222: INFO : data_ingestion : File already exists]
+[2025-02-03 20:20:53,222: ERROR : main : File is not a zip file]
+Traceback (most recent call last):
+  File "/Users/arunsoundararajan/dataScience/main.py", line 9, in <module>
+    data_ingestion.initiate_data_ingestion()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/pipeline/data_ingestion.py", line 18, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+  File "/Users/arunsoundararajan/dataScience/src/DataScience/components/data_ingestion.py", line 26, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file,'r') as zip_ref:
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1272, in __init__
+    self._RealGetContents()
+  File "/Users/arunsoundararajan/dataScience/venv/lib/python3.10/zipfile.py", line 1339, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file

@@ -1,0 +1,9 @@
+artifacts_root : artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL : https://github.com/krishnaik06/datasets/blob/1224aaab5e7136afb9c0c874cbe1d20db22f5be5/winequality-data.zip
+  local_data_file : artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+  
